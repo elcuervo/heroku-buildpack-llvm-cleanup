@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+BUILD_DIR=$1
+
+echo "🔧 Custom cleanup buildpack running..."
+
+# Remove LLVM/Clang
+rm -rf "$BUILD_DIR/.apt/usr/lib/llvm*" \
+       "$BUILD_DIR/.apt/usr/share/clang" \
+       "$BUILD_DIR/.apt/usr/share/doc" \
+       "$BUILD_DIR/.apt/usr/share/man" \
+       "$BUILD_DIR/.apt/var/cache/apt/archives"
+
+exit 0
